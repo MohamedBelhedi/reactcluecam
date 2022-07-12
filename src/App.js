@@ -70,21 +70,35 @@ facingMode: "environment",
       predictions[n].class +": " + Math.round(parseFloat(predictions[n].score) * 100) +
       "%", bboxLeft,bboxTop);
       const pred_1=predictions[n].class
-      const pred_2=predictions[n].class
+      // const pred_2=predictions[n].class
       h2.innerText=pred_1
-      h3.innerText=pred_2
-      ctx.rect(bboxLeft, bboxTop, bboxWidth, bboxHeight);
+      // h3.innerText=pred_2
+ 
+      const rehteck=ctx.rect(bboxLeft, bboxTop, bboxWidth, bboxHeight);
       ctx.strokeStyle = "#FF0000";
       ctx.lineWidth = 3;
-      ctx.stroke();console.log("detected");
+      ctx.stroke();
+      console.log("detected");
+
+
       }
       }
       }
       //Rerun prediction by timeout
       setTimeout(() => {predictionFunction() 
-      
+      h2.innerText=""
       
       }, 1000);
+      
+      const h2=document.querySelector("h2")
+      if(predictions.length===0)
+      {
+
+        h2.innerText="Nicht erkannt"
+     
+
+      }
+      h2.innerTex=""
       
     }
  
