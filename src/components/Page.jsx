@@ -36,31 +36,31 @@ function Page() {
   height: 300,
   width: 300,
   facingMode: "environment",
-  change(){
-    const window1=videoConstraints
-    if(window.matchMedia('(min-width:600px)')){
+//   change(){
+//     const window1=videoConstraints
+//     if(window.matchMedia('(min-width:600px)')){
 
-        window1.height=500
-        window1.width=500
-        console.log("Hi1")
-        }
+//         window1.height=500
+//         window1.width=500
+//         console.log("Hi1")
+//         }
 
-    else if(window.matchMedia('(max-width:500px)'))
-    {
+//     else if(window.matchMedia('(max-width:500px)'))
+//     {
 
-        window1.height=300
-        window1.width=300
+//         window1.height=300
+//         window1.width=300
         
-    }else{
+//     }else{
 
-window1.height=300
-window1.width=300
+// window1.height=300
+// window1.width=300
 
-    }
+//     }
 
 
 
-  }
+//   }
  
   };
 // const change=()=>{
@@ -238,7 +238,8 @@ window1.width=300
    ref={webcamRef}
    screenshotQuality={1}
    screenshotFormat="image/jpeg"
-   videoConstraints={videoConstraints.change()}
+//    videoConstraints={videoConstraints.change()}
+   videoConstraints={videoConstraints}
    />
   
   

@@ -6,7 +6,7 @@ function Footer() {
 
     const Style={
 styles:{
-        margin:30,
+        margin:10,
         flexWrap:"wrap",
         textAlign:"center",
         textDecoration:"none"
