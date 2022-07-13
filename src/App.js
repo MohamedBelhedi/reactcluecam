@@ -19,7 +19,7 @@ function App() {
 
 <Routes>
 <Route path={"/reactcluecam"} element={<Page/>} exact></Route>
-<Route path={"/datenschutz"}  element={<Datenschutz/>}></Route>
+<Route path={"reactcluecam/datenschutz"}  element={<Datenschutz/>}></Route>
 <Route></Route>
 <Route></Route>
 
