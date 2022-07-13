@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reactcluecam/static/css/main.5562d9df.css",
-    "main.js": "/reactcluecam/static/js/main.e0a83abe.js",
+    "main.js": "/reactcluecam/static/js/main.a460d86e.js",
     "static/js/787.134ce875.chunk.js": "/reactcluecam/static/js/787.134ce875.chunk.js",
     "index.html": "/reactcluecam/index.html",
     "main.5562d9df.css.map": "/reactcluecam/static/css/main.5562d9df.css.map",
-    "main.e0a83abe.js.map": "/reactcluecam/static/js/main.e0a83abe.js.map",
+    "main.a460d86e.js.map": "/reactcluecam/static/js/main.a460d86e.js.map",
     "787.134ce875.chunk.js.map": "/reactcluecam/static/js/787.134ce875.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5562d9df.css",
-    "static/js/main.e0a83abe.js"
+    "static/js/main.a460d86e.js"
   ]
 }
