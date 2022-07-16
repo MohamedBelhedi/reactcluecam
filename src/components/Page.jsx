@@ -8,11 +8,7 @@ import '../App.css';
 function Page() {
     const [stop,setStop]=useState(false)
 
-    const stopTest=()=>{
-  
-  setStop(test=>test)
-  
-    }
+    const[func,Setfunc]=useState()
     const [model, setModel] = useState();
     async function loadModel() {
       try {
@@ -127,29 +123,69 @@ function Page() {
         ctx.stroke();
         console.log("detected");
   
+    // scan sound play
   
         }
         }
         }
         //Rerun prediction by timeout
         setTimeout(() => {predictionFunction() 
-        h2.innerText=""
+        h2.innerText="...Seek"
+
         
-        }, 1000);
+
+        
+            
+    
+      
+     },
+         1000);
+       
         // sobald er keine Objekte Erkennt schreibt er sowas
         const h2=document.querySelector("h2")
+       
         if(predictions.length===0)
         {
   
-          h2.innerText="Nicht erkannt"
-       
+          h2.innerText="not Recognize"
+          var audio = new Audio('https://www.soundsnap.com/kaib_elec_di_induction_telemetrics_scanning_000058_wav');
+          audio.play();
   
         }
         h2.innerTex=""
-        
+        for(let n=0;n< predictions.length; n++){
+        const person="person"
+        const dog="dog"
+        const microwave="microwave"
+        const car="car"
+        if(predictions[n].class===person)
+        {
+
+          h2.innerText="Attention Person can be Friend or Enemy"
+
+        }
+        if(predictions[n].class===dog)
+        {
+
+          h2.innerText="Beware Dog or Dogs"
+
+        }
+        if(predictions[n].class===microwave)
+        {
+
+          h2.innerText="microwave danger for for your Chip T-911119"
+
+        }
+        if(predictions[n].class===car)
+        {
+
+          h2.innerText="beware Car"
+
+        }
+      }
       }
    
-  
+
   
      const stopdetect=()=>{
   
@@ -161,7 +197,15 @@ function Page() {
         var cnvs = document.getElementById("myCanvas");
   
         cnvs.style.display="none"
-        h2.innerText=""
+
+        
+       
+        if(stopdetect){
+          h2.innerText="Bye Terminator"
+          console.log("Bye")
+        }
+
+       
         
   
    }
@@ -170,20 +214,52 @@ function Page() {
     const cam=document.querySelector(".Cam")
      cam.style.display="block"
      webcamRef.current.video=true
-  
-  
-  
-    
+ }
+   const NachtModus=()=>{
+
+    const date=new Date()
+    const h=date.getUTCHours()
    
+
+   if(h!==20)
+   {
+    
+
+   const x=document.createElement("h3")
+   const text=document.createTextNode("Dark Lights on")
+
+   x.appendChild(text)
+ alert("Taschen lampe an")
+ 
+
   
-  
+
+
+
+    }
+    //else if(h<20){
+
+    //   schrift.innerHTML="Welcome back Terminator"
+
+
+    // }
+
+
+   
+
+
+
+
    }
   
    
   
     return (
     
-        <header className="App-header">
+        <header className="App-header" 
+        onLoad={()=>NachtModus}
+        
+        >
   
   
         <button
@@ -228,10 +304,13 @@ function Page() {
    style={{ backgroundColor: "transparent" }}
    />
    </div>
-   <h2></h2>
+   <h2 className="schrift">Hello Terminator T-91119</h2>
+   
    
    <Webcam 
 //    onChange={videoConstraints.change}
+    
+// onChange={()=>{setStop(!stop)}}
    className="Cam"
    audio={false}
    id="img"

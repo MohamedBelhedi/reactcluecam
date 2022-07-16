@@ -13,13 +13,20 @@ import Datenschutz from './components/Datenschutz';
 import Footer from './components/footer';
 
 function App() {
+const NotFound=()=>{
 
+
+  return(<h1>Falsch Raus hier</h1>)
+
+
+}
  return(
 <>
 
 <Routes>
 <Route path={"/reactcluecam"} element={<Page/>} exact></Route>
-<Route path={"reactcluecam/datenschutz"}  element={<Datenschutz/>}></Route>
+<Route path={"/datenschutz"}  element={<Datenschutz/>}></Route>
+<Route path={"*"} element={<NotFound/>}></Route>
 <Route></Route>
 <Route></Route>
 
